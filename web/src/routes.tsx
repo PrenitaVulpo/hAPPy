@@ -1,13 +1,14 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
+//, Switch
 import Landing from './pages/landing';
-import Map from "./pages/map";
+import MapPage from "./pages/map";
 
 function Routes(){
     return(
         <BrowserRouter>
             <Route path="/" exact component={Landing}/>
-            <Route path="/app" component={Map}/>
+            <Route path="/app" component={MapPage}/>
         </BrowserRouter>
 
     )
