@@ -36,7 +36,12 @@
     font-weight: 800;
 }
 
+#page-map .leaflet-container{
+    z-index: 5;
+}
+
 #page-map .create-institution{
+    z-index: 10i;
     position: absolute;
     right: 40px;
     bottom: 40px;
