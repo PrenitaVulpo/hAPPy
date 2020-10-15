@@ -1,34 +1,13 @@
 import {Router} from 'express';
-import {getRepository} from 'typeorm';
-import Institution from './models/Institution';
+import InstitutionController from './constrollers/institutionController'
+import multer from 'multer';
+import uploadConfig from './config/upload';
 
 const routes = Router();
+const upload = multer(uploadConfig);
 
-routes.post('/institutions', async (request, response) => {
-    const{
-        name,
-        latitude,
-        longitude,
-        about,
-        instructions,
-        opening_hours,
-        open_on_weekends
-    } = request.body;
-
-    const institutionRepository = getRepository(Institution);
-    const institution = institutionRepository.create({
-        name,
-        latitude,
-        longitude,
-        about,
-        instructions,
-        opening_hours,
-        open_on_weekends
-    });
-
-    await institutionRepository.save(institution);
-    return response.status(201).json(institution)
-    
-})
+routes.post('/institutions', upload.array('images'), InstitutionController.create)
+routes.get('/institutions/:id', InstitutionController.show)
+routes.get('/institutions', InstitutionController.index)
 
 export default routes;
