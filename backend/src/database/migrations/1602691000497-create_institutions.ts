@@ -7,7 +7,7 @@ export class createInstitutions1602691000497 implements MigrationInterface {
             name: 'institutions',
             columns:[
                 {
-                    name: 'ed',
+                    name: 'id',
                     type: 'integer',
                     unsigned: true,
                     isPrimary: true,
@@ -37,6 +37,10 @@ export class createInstitutions1602691000497 implements MigrationInterface {
                 {
                     name: 'instructions',
                     type: 'text'
+                },
+                {
+                    name: 'opening_hours',
+                    type: 'varchar'
                 },
                 {
                     name: 'open_on_weekends',
