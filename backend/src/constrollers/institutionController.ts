@@ -1,6 +1,7 @@
 import {Request, Response} from 'express';
 import {getRepository} from 'typeorm';
 import Institution from '../models/Institution';
+import InstitutionView from '../views/institutions_view'
 
 export default {
     async index(request:Request, response:Response){
@@ -8,7 +9,7 @@ export default {
         const institutions = await institutionRepository.find({
             relations: ['images']
         });
-        return response.json(institutions)
+        return response.json(InstitutionView.renderMany(institutions))
     },
     async show(request:Request, response:Response){
         const {id} = request.params;
@@ -16,7 +17,7 @@ export default {
         const institution = await institutionRepository.findOneOrFail(id, {
             relations: ['images']
         });
-        return response.json(institution)
+        return response.json(InstitutionView.render(institution))
     },
     async create(request:Request, response:Response){
         const{
