@@ -8,7 +8,6 @@ function changeSpaces(name: string){
 };
 
 export default{
-    
     storage: multer.diskStorage({
         destination: path.join(__dirname, '..', '..', 'images'),
         filename: (request, file, cb) => {
