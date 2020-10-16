@@ -37,7 +37,7 @@ export default {
             return {path: image.filename}
         })
         //images where saved on the last variable
-        const institution = institutionRepository.create({
+        const institution = institutionRepository.create({ 
             name,
             latitude,
             longitude,
