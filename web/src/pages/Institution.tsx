@@ -32,6 +32,7 @@ interface routeParams{
 export default function Orphanage() {
   const params = useParams<routeParams>()
   const [institution, setInstitution] = useState<Institution>();
+  const [imgArrayPosition, setImgArrayPosition] = useState(0);
 
   useEffect(()=>{
     api.get(`institutions/${params.id}`).then(response => {
@@ -49,11 +50,14 @@ export default function Orphanage() {
 
       <main>
         <div className="orphanage-details">
-          <img src={institution.images[0].url} alt={institution.name} />
+          <img src={institution.images[imgArrayPosition].url} alt={institution.name} />
 
           <div className="images">
-            {institution.images.map(image=>{
-              return(<button key={image.id} className="active" type="button">
+            {institution.images.map((image, index)=>{
+              return(
+              <button key={image.id} className={imgArrayPosition===index ? "active" : ''}
+                type="button"
+                onClick={(()=>{setImgArrayPosition(index)})}>
                 <img src={image.url} alt={institution.name} />
               </button>)
             })}
