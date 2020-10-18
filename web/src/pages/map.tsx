@@ -40,13 +40,13 @@ function MapPage(){
                   position={[-7.3170944,-39.3019392]}>
                     <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
                       Lar das meninas
-                      <Link to="/institutions/7" ><FiArrowRight size={20} color="#FFF"/></Link>
+                      <Link to="/institutions/1" ><FiArrowRight size={20} color="#FFF"/></Link>
                     </Popup>  
                   </Marker>
                   {/*<TileLayer 
                   url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/titles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}/>*/}
               </Map>
-          <Link to="/institution/create" className="create-institution">
+          <Link to="/institutions/create" className="create-institution">
               <FiPlus size={32} color="#fff"/>
           </Link>
       </div>
