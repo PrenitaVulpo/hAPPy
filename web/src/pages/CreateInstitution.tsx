@@ -15,7 +15,7 @@ export default function CreateOrphanage() {
       <Sidebar></Sidebar>
 
       <main>
-        <form className="create-orphanage-form">
+        <form className="create-institution-form">
           <fieldset>
             <legend>Dados</legend>
 

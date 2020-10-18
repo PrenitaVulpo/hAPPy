@@ -20,7 +20,7 @@ function MapPage(){
   const [institutions, setInstitutions] = useState<Institution[]>([]);
 
   useEffect(()=>{
-    api.get('institutions').then(response => {
+    api.get('/institutions').then(response => {
       setInstitutions(response.data);
     })
   },[]);
