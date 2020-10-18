@@ -5,7 +5,6 @@ import Landing from './pages/landing';
 import MapPage from "./pages/map";
 import Institution from "./pages/Institution";
 import CreateInstitution from "./pages/CreateInstitution";
-import Orphanage from "./pages/Orphanage";
 
 function Routes(){
     return(
@@ -14,7 +13,6 @@ function Routes(){
             <Route path="/app" component={MapPage}/>
             <Route path="/institutions/create" component={CreateInstitution}/>
             <Route path="/institutions/:id" component={Institution}/>
-            <Route path="/orphanages/:id" component={Orphanage}/>
         </BrowserRouter>
 
     )
