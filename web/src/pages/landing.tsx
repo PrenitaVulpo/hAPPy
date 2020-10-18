@@ -7,6 +7,18 @@ import logoImg from '../img/logo.svg';
 import {FiArrowRight} from 'react-icons/fi';
 
 function Landing(){
+  if ("geolocation" in navigator) {
+    console.log("Available");
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    }, error=>{
+      console.error("Error Code = " + error.code + " - " + error.message);
+    });
+  } else {
+    console.log("Not Available");
+  }
+    
     return(
         <div id="page-landing">
         <div className="content-wrapper">
