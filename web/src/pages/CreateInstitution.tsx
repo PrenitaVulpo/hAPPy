@@ -11,7 +11,7 @@ import mapIcon from '../utils/mapIcon';
 export default function CreateOrphanage() {
 
   return (
-    <div id="page-create-orphanage">
+    <div id="page-create-institution">
       <Sidebar></Sidebar>
 
       <main>
